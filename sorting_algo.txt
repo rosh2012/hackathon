@@ -1,0 +1,47 @@
+def selection_sort(l,n):
+    temp = 0 
+
+    for i in range(n):
+        min_idx = i
+        for j in range(i+1,n):
+            if l[min_idx] > l[j]: 
+                min_idx = j
+        l[i],l[min_idx] = l[min_idx],l[i]
+    print(l)
+    
+def abubble_sort(l,n):
+    count = 0
+    for i in range(0,n):
+        swapped = False
+        for j in range(0,n-i-1):
+            if l[j]>l[j+1]:
+                l[j],l[j+1] = l[j+1],l[j]
+                swapped = True
+                count +=1
+        if(swapped == False):
+            break
+    print(l)
+    print(count)
+    
+def dbubble_sort(l,n):
+    count = 0
+    for i in range(0,n):
+        swapped = False
+        for j in range(0,n-i-1):
+            if l[j]<l[j+1]:
+                l[j],l[j+1] = l[j+1],l[j]
+                swapped = True
+                count +=1
+        if(swapped == False):
+            break
+    print(l)
+    print(count)
+    
+
+
+a = [12,432,1,231,435,6,43,2]
+b=len(a)
+#selection_sort(a,b)
+abubble_sort(a, b)
+dbubble_sort(a, b)
+    

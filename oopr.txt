@@ -1,0 +1,13 @@
+OOPR
+
+1. Class and object
+2. Constructor
+3. Encapsulation - need, private attributes, setter and getter
+4. Reference variable
+5. Pass by reference (object) 
+6. Self
+7. collection of objects
+8. Static - need, static attributes, static methods
+9. Static counter
+10. Aggregation
+11. Dependency (Abstraction)

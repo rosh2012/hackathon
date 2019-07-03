@@ -1,0 +1,105 @@
+Data structure - Storing data in an efficient way
+
+Linked List
+-----------
+
+--> Time complexity
+--> Non-linear data structure
+--> collection of nodes ---> (DATA, ADDRESS) 
+
+
+display()
+1. Call the head node as temp
+2. While temp is not None,
+   a. Display temp’s data
+   b. Make the next node as temp
+
+
+--------------------------------------------------------------------------------------------------------------------------
+class Node:
+    def __init__(self, dataval=None):
+        self.dataval = dataval
+        self.nextval = None
+        
+class SLinkedList:
+    def __init__(self):
+        self.headval = None
+        
+    def listprint(self):
+        printval = self.headval
+        while printval is not None:
+            print(printval.dataval)
+            printval = printval.nextval
+            
+    def AtBegining(self, newdata):
+        newNode = Node(newdata)
+        
+        #Update the new nodes next val to existing node :P 
+        newNode.nextval = self.headval
+        self.headval = newNode
+         
+    def AtEnd(self,newdata):
+        pass
+            
+    def find_node(self, data):
+        temp = self.headval
+        while temp is not None:
+            if temp.dataval == data:
+                return 1
+            temp = temp.nextval
+        return -1
+    
+    def add(self, data):
+        new = Node(data)
+        if(self.headval is None):
+            self.headval = new
+            return
+        
+        temp = self.headval
+        while temp.nextval:
+            temp = temp.nextval
+        temp.nextval = new
+    '''   
+    def insert(self, data, pos):
+        new = Node(data)
+        '
+        count = 0 
+        temp = self.headval
+        while temp.nextval:
+            count +=1 
+            temp = temp.nextval
+        if ((count+1) <= pos):
+            return "PODA"
+        temp1 = self.headval
+        
+        temp = self.headval
+        i=0
+        while i<pos:
+            temp = temp.nextval
+            i += 1
+        new = temp.nextval
+        temp.nextval = new
+            
+    '''
+    def Inbetween(self,middle_node,newdata):
+        if middle_node is None:
+            return
+        NewNode = Node(newdata)
+        NewNode.nextval = middle_node.nextval
+        middle_node.nextval = NewNode
+            
+list = SLinkedList()
+list.headval = Node("Mon")
+e2 = Node("Tue")
+e3 = Node("Wed")
+#Link first node to second
+list.headval.nextval = e2
+#Link second node to third
+e2.nextval = e3
+list.AtBegining("Sun")
+#list.listprint()
+#print(list.headval.dataval)
+print(list.find_node("Mon"))
+list.add("Sat")
+list.Inbetween(list.headval.nextval,"Fri")
+list.listprint()

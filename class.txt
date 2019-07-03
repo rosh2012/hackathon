@@ -1,0 +1,32 @@
+class Customer:
+    cust_id=0
+    def __init__(self):
+        self.__cust_id=0 
+        self.__bill=None 
+        
+    def generate_custid(self):
+        Customer.cust_id+=1
+        return Customer.cust_id 
+    
+    def get_bill(self):
+        return self.__bill
+        
+    def set_bill(self,bill):
+        self.__bill=bill
+        
+cust1=Customer()
+cust1.set_bill(101)
+print("Customer id:",cust1.generate_custid())
+print("Customer bill", cust1.get_bill())
+
+
+cust2=Customer()
+cust2.set_bill(102)
+print("Customer id:", cust2.generate_custid())
+print("Customer bill", cust2.get_bill()) 
+
+cust3=Customer()
+cust3.set_bill(103)
+print("Customer id:", cust3.generate_custid())
+print("Customer bill", cust3.get_bill())       
+        

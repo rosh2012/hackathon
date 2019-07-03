@@ -1,0 +1,95 @@
+#dictionary
+'''
+crew_details={ "Pilot":"Kumar",
+"Co-pilot":"Raghav",
+"Head-Strewardess":"Malini",
+"Stewardess":"Mala" }
+
+print(crew_details["Pilot"])
+
+for key,value in crew_details.items():
+     print(key,":",value)
+     
+'''
+#----------------------------------------------------------------------------------------------------------------------
+'''
+english = ["merry","christmas","and","happy","new"]
+swedish = ["god","jul","och","gott","nytt"]
+
+eng_swe_dict = {english: swedish for english, swedish in zip(english,swedish)}
+
+for i,j in eng_swe_dict.items():
+     print(i,":",j)
+
+print(eng_swe_dict)
+
+#swapping key and value
+new_dict = dict([(value,key) for key,value in eng_swe_dict.items()])
+print(new_dict)
+'''
+#----------------------------------------------------------------------------------------------------------------------
+#PF-Exer-23
+'''
+def translate(bilingual_dict,english_words_list):
+    #Write your logic here
+
+    return [bilingual_dict[word] for word in english_words_list]
+
+
+bilingual_dict= {"merry":"god", "christmas":"jul", "and":"och", "happy":"gott", "new":"nytt", "year":"ar"}
+english_words_list=["merry","christmas"]
+print("The bilingual dict is:",bilingual_dict)
+print("The english words are:",english_words_list)
+
+swedish_words_list=translate(bilingual_dict, english_words_list)
+print("The equivalent swedish words are:",swedish_words_list)
+--------------------------------------------------------------------------------------------------------------------------
+'''
+#accesing
+
+crew_details={ "Pilot":"Kumar",
+"Co-pilot":"Raghav",
+"Head-Strewardess":["Malini",2],
+"Stewardess":"Mala" }
+
+print(crew_details['Pilot'])
+print(crew_details.get('Pliot'))
+
+print(crew_details.items())
+print(crew_details.keys())
+print(crew_details.values())
+
+for x in crew_details:
+    print(crew_details[x])
+    
+print(crew_details['Head-Strewardess'][1])
+
+#updation
+
+crew_details['Co-pilot'] = "ROshan"
+
+for x in crew_details:
+    print(crew_details[x])
+    
+crew_details.update({"Pilot":"Raj"})
+
+for x,y in crew_details.items():
+    print(x,y)
+    
+for x in crew_details.items():
+    print(x)
+#---------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+

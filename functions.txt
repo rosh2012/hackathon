@@ -1,0 +1,17 @@
+str1 = 'Roshan '
+print(len(str1))
+
+str2 = str1.strip()
+print(len(str2))
+
+list1 = ['Roshan','Raj']
+
+str1 = "-".join(list1)
+print(str1)
+
+str2 = 'adf:opf'
+print(str2.split(':'))
+
+l = [12,3,13,64,23]
+l.sort(reverse=True)
+print(l)
